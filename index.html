@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>我的画板</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="font/iconfont.css">
+  <script src="js/jquery.min.js" charset="utf-8"></script>
+  <script src="js/palette.js" charset="utf-8"></script>
+  <script src="js/index.js"></script>
+</head>
+<body>
+  <!-- control -->
+  <div class="control">
+    <ul class="file">
+      <li class="create iconfont">
+        <span class="icon">&#xe618;</span><span class="tips">创建新文档</span>
+      </li>
+      <li class="save iconfont">
+        <span class="icon">&#xe6b7;</span><span class="tips">保存文档</span>
+      </li>
+    </ul>
+    <ul class="types">
+      <li class="line iconfont active" title="直线" data_type="line">
+        <span class="icon">&#xe653;</span>
+        <span class="tips">直线</span>
+      </li>
+      <li class="pencil iconfont" title="钢笔" data_type="pencil">
+        <span class="icon">&#xe64c;</span>
+        <span class="tips">钢笔</span>
+      </li>
+      <li class="triangle iconfont" title="三角形" data_type="triangle">
+        <span class="icon">&#xe705;</span>
+        <span class="tips">三角形</span>
+      </li>
+      <li class="rect iconfont" title="矩形" data_type="rect">
+        <span class="icon">&#xe619;</span>
+        <span class="tips">矩形</span>
+      </li>
+      <li class="circle iconfont" title="圆" data_type="circle">
+        <span class="icon">&#xe933;</span>
+        <span class="tips">圆</span>
+      </li>
+      <li class="polygon iconfont" title="多边形" data_type="polygon">
+        <span class="icon">&#xe617;</span>
+        <span class="tips">多边形</span>
+      </li>
+      <li class="polygons iconfont" title="多角形" data_type="polygons">
+        <span class="icon">&#xe7a1;</span>
+        <span class="tips">多角形</span>
+      </li>
+      <li class="text iconfont" title="添加文字" data_type="text">
+        <span class="icon">&#xe69a;</span>
+        <span class="tips">文字</span>
+      </li>
+      <li class="eraser iconfont" title="擦除" data_type="eraser">
+        <span class="icon">&#xe718;</span>
+        <span class="tips">橡皮</span>
+      </li>
+    </ul>
+  </div>
+
+
+
+  <!-- main_area -->
+  <div class="main_area">
+    <ul class="tabs">
+      <!-- 新建canvas_tab区域 -->
+    </ul>
+    <ul class="handle">
+      <li class="left">
+        <div class="line active">
+          线宽: <input type="text" class="lineWidth" value="1">
+          颜色: <input type="color" class="strokeStyle" value="#000000">
+          线帽: <select class="lineCap" id="">
+                  <option value="butt" selected="selected">butt(平角)</option>
+                  <option value="round">round(圆角)</option>
+                  <option value="squre">butt(平角)</option>
+                </select>
+        </div>
+        <div class="pencil">
+          线宽: <input type="text" class="lineWidth" value="1">
+          颜色: <input type="color" class="strokeStyle" value="#000000">
+          线帽: <select class="lineCap" id="">
+                  <option value="butt" selected="selected">butt(平角)</option>
+                  <option value="round">round(圆角)</option>
+                  <option value="squre">butt(平角)</option>
+                </select>
+        </div>
+        <div class="triangle">
+          轮廓: <input type="checkbox" class="stroke" value="stroke" checked="checked">
+          <input type="color" class="strokeStyle" value="#000000">
+          填充: <input type="checkbox" class="fill" value="fill">
+          <input type="color" class="fillStyle" value="#000000">
+          线宽: <input type="text" class="lineWidth" value="1">
+          角帽: <select class="lineJoin" id="">
+                  <option value="miter" selected="selected">miter(尖角)</option>
+                  <option value="round">round(圆角)</option>
+                  <option value="bevel">bevel(斜角)</option>
+                </select>
+        </div>
+        <div class="rect">
+          轮廓: <input type="checkbox" class="stroke" value="stroke" checked="checked">
+          <input type="color" class="strokeStyle" value="#000000">
+          填充: <input type="checkbox" class="fill" value="fill">
+          <input type="color" class="fillStyle" value="#000000">
+          线宽: <input type="text" class="lineWidth" value="1">
+          角帽: <select class="lineJoin" id="">
+                  <option value="miter" selected="selected">miter(尖角)</option>
+                  <option value="round">round(圆角)</option>
+                  <option value="bevel">bevel(斜角)</option>
+                </select>
+        </div>
+        <div class="circle">
+          轮廓: <input type="checkbox" class="stroke" value="stroke" checked="checked">
+          <input type="color" class="strokeStyle" value="#000000">
+          填充: <input type="checkbox" class="fill" value="fill">
+          <input type="color" class="fillStyle" value="#000000">
+          线宽: <input type="text" class="lineWidth" value="1">
+          角帽: <select class="lineJoin" id="">
+                  <option value="miter" selected="selected">miter(尖角)</option>
+                  <option value="round">round(圆角)</option>
+                  <option value="bevel">bevel(斜角)</option>
+                </select>
+        </div>
+        <div class="polygon">
+          轮廓: <input type="checkbox" class="stroke" value="stroke" checked="checked">
+          <input type="color" class="strokeStyle" value="#000000">
+          填充: <input type="checkbox" class="fill" value="fill">
+          <input type="color" class="fillStyle" value="#000000">
+          线宽: <input type="text" class="lineWidth" value="1">
+          角帽: <select class="lineJoin" id="">
+                  <option value="miter" selected="selected">miter(尖角)</option>
+                  <option value="round">round(圆角)</option>
+                  <option value="bevel">bevel(斜角)</option>
+                </select>
+          边数: <input type="text" class="polygon_num" value="5">
+        </div>
+        <div class="polygons">
+          轮廓: <input type="checkbox" class="stroke" value="stroke" checked="checked">
+          <input type="color" class="strokeStyle" value="#000000">
+          填充: <input type="checkbox" class="fill" value="fill">
+          <input type="color" class="fillStyle" value="#000000">
+          线宽: <input type="text" class="lineWidth" value="1">
+          角帽: <select class="lineJoin" id="">
+                  <option value="miter" selected="selected">miter(尖角)</option>
+                  <option value="round">round(圆角)</option>
+                  <option value="bevel">bevel(斜角)</option>
+                </select>
+          边数: <input type="text" class="polygons_num" value="5">
+        </div>
+        <div class="text">
+          轮廓: <input type="checkbox" class="stroke" value="stroke">
+          <input type="color" class="strokeStyle" value="#000000">
+          填充: <input type="checkbox" class="fill" value="fill" checked="checked">
+          <input type="color" class="fillStyle" value="#000000">
+          线宽: <input type="text" class="lineWidth" value="1">
+          角帽: <select class="lineJoin" id="">
+                  <option value="miter" selected="selected">miter(尖角)</option>
+                  <option value="round">round(圆角)</option>
+                  <option value="bevel">bevel(斜角)</option>
+                </select>
+          字体: <select class="font" id="">
+                  <option value="Arial" selected="selected">Arial</option>
+                </select>
+                <select class="font_size" id="">
+                        <option value="1px">1px</option>
+                        <option value="2px">2px</option>
+                        <option value="3px">3px</option>
+                        <option value="4px">4px</option>
+                        <option value="5px">5px</option>
+                        <option value="6px">6px</option>
+                        <option value="7px">7px</option>
+                        <option value="8px">8px</option>
+                        <option value="9px">9px</option>
+                        <option value="10px">10px</option>
+                        <option value="11px">11px</option>
+                        <option value="12px">12px</option>
+                        <option value="13px">13px</option>
+                        <option value="14px">14px</option>
+                        <option value="15px">15px</option>
+                        <option value="16px" selected="selected">16px</option>
+                        <option value="17px">17px</option>
+                        <option value="18px">18px</option>
+                        <option value="19px">19px</option>
+                        <option value="20px">20px</option>
+                        <option value="21px">21px</option>
+                        <option value="22px">22px</option>
+                        <option value="23px">23px</option>
+                        <option value="24px">24px</option>
+                        <option value="25px">25px</option>
+                        <option value="26px">26px</option>
+                        <option value="27px">27px</option>
+                        <option value="28px">28px</option>
+                        <option value="29px">29px</option>
+                        <option value="30px">30px</option>
+                        <option value="31px">31px</option>
+                        <option value="32px">32px</option>
+                        <option value="33px">33px</option>
+                        <option value="34px">34px</option>
+                        <option value="35px">35px</option>
+                        <option value="36px">36px</option>
+                        <option value="37px">37px</option>
+                        <option value="38px">38px</option>
+                        <option value="39px">39px</option>
+                        <option value="40px">40px</option>
+                        <option value="41px">41px</option>
+                        <option value="42px">42px</option>
+                        <option value="43px">43px</option>
+                        <option value="44px">44px</option>
+                        <option value="45px">45px</option>
+                        <option value="46px">46px</option>
+                        <option value="47px">47px</option>
+                        <option value="48px">48px</option>
+                        <option value="49px">49px</option>
+                        <option value="50px">50px</option>
+                </select>
+        </div>
+        <div class="eraser">
+          宽: <input type="text" class="width" value="30">
+          长: <input type="text" class="height" value="30">
+        </div>
+      </li>
+      <li class="right">
+        <span class="iconfont back">&#xe60a;</span>
+        <span class="iconfont next">&#xe716;</span>
+      </li>
+    </ul>
+    <div class="work_area">
+      <!-- 新建canvas区域 -->
+    </div>
+  </div>
+
+
+
+  <!-- other -->
+  <div class="other">
+
+  </div>
+
+
+
+
+
+  <!-- create_input -->
+  <div class="create_input">
+    <div class="box">
+      <h1>画布配置</h1>
+      <p>宽度:  <input type="text" class="width" value="">   px</p>
+      <p>高度:  <input type="text" class="height" value="">   px</p>
+      <ul class="btn_box">
+        <li class="btn default">默认</li>
+        <li class="btn sure">确认</li>
+        <li class="btn off">取消</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

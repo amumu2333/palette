@@ -1,0 +1,277 @@
+// out: index.css,compress:false,sourcemap:false
+body,input,ul,li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+* {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  transition: all .2s;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  overflow: hidden;
+  background: #ccc;
+}
+
+//---------------------------------------
+div.control {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 160px;
+  height: 100%;
+  background: #808080;
+  font-size: 32px;
+  ul.file {
+    width: 100%;
+    background: #000;
+    color: #eee;
+    li {
+      padding-left: 20%;
+      line-height: 60px;
+      span {
+        display: inline-block;
+        cursor: pointer;
+        &.icon {
+          width: 40%;
+          font-size: 32px;
+          text-align: center;
+          vertical-align: middle;
+        }
+        &.tips {
+          display: none;
+          width: 60%;
+          font-size: 12px;
+          font-weight: bold;
+          vertical-align: middle;
+        }
+      }
+      &.save .icon {
+        font-size: 42px;
+      }
+      &:hover {
+        span.tips {
+          display: inline-block;;
+        }
+      }
+    }
+  }
+  ul.types {
+    height: auto;
+    li {
+      padding-left: 20%;
+      line-height: 50px;
+      margin-bottom: 5px;
+      background: #333;
+      color: #eee;
+      span {
+        display: inline-block;
+        cursor: pointer;
+        &.icon {
+          width: 40%;
+          font-size: 24px;
+          text-align: center;
+          vertical-align: middle;
+        }
+        &.tips {
+          display: none;
+          width: 40%;
+          font-size: 12px;
+          font-weight: bold;
+          vertical-align: middle;
+        }
+      }
+      &:hover {
+        background: #eb1d21;
+        span.tips {
+          display: inline-block;;
+        }
+      }
+      &.active {
+        background: #eb1d21;
+        span.tips {
+          display: inline-block;;
+        }
+      }
+    }
+  }
+}
+//---------------------------------
+div.main_area {
+  position: fixed;
+  top: 0;
+  left: 160px;
+  width: 1000px;
+  height: 100%;
+  border: 2px solid #111;
+  ul.tabs {
+    width: 100%;
+    height: 30px;
+    background: #808080;
+    border-bottom: 2px solid #111;
+    overflow: hidden;
+    li.tab {
+      float: left;
+      color: #eee;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 30px;
+      padding: 0 1em;
+      cursor: pointer;
+      &.now {
+        background: #eb1d21;
+      }
+      &:hover {
+        background: #eb1d21;
+      }
+    }
+  }
+  ul.handle {
+    height: 30px;
+    line-height: 24px;
+    background: #808080;
+    border-bottom: 2px solid #111;
+    .right {
+      float: right;
+      span {
+        display: inline-block;
+        text-align: center;
+        width: 30px;
+        height: 30px;
+        font-size: 24px;
+        line-height: 30px;
+        color: #eee;
+        cursor: pointer;
+        &:hover {
+          background: #eb1d21;
+        }
+      }
+    }
+    .left {
+      float: left;
+      width: 80%;
+      position: relative;
+      div {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width:100%;
+        padding-left: 5%;
+        color: #eee;
+        line-height: 30px;
+        input {
+          width: 50px;
+          background: #a0a0a0;
+          color: #eee;
+          border: none;
+          text-align: center;
+          vertical-align: baseline;;
+        }
+        select {
+          background: #a0a0a0;
+          color: #eee;
+          border: none;
+          vertical-align: baseline;
+        }
+        &.active {
+          display: block;
+        }
+      }
+    }
+  }
+  div.work_area {
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    .canvas_box {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #fff;
+      &.now {
+        display: block;
+      }
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
+      .mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+      }
+    }
+  }
+}
+//--------------------------
+div.create_input {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .8);
+  div.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 356px;
+    height: 252px;
+    background: #808080;
+    margin-left: -13%;
+    margin-top: -10%;
+    padding: 20px;
+    color: #eee;
+    font-weight: bold;
+    font-size: 16px;
+    .btn_box {
+      text-align: justify;
+      height: 30px;
+      line-height: 30px;
+      &::after {
+        display: inline-block;
+        width: 100%;
+        content: "";
+        height: 0;
+        line-height: 0;
+      }
+      .btn {
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 1em;
+        background: #333;
+        color: #eee;
+        font-weight: bold;
+        cursor: pointer;
+        &:hover {
+          background: #eb1d21;
+        }
+      }
+    }
+    p {
+      input {
+        background: #333;
+        width: 100px;
+        border: 0;
+        color: #eee;
+        line-height: 30px;
+        padding-left: 1em;
+      }
+    }
+  }
+}
